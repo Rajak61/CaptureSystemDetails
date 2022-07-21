@@ -6,7 +6,7 @@
 	},
 	"item": [
 		{
-			"name": "PostVDIDetails",
+			"name": "PostMachineDetails",
 			"request": {
 				"method": "POST",
 				"header": [
@@ -19,7 +19,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": " {\n        \"systemInformation\": {\n            \"hostname\": \"vm-cloud-readiness-assesor\",\n            \"uptime\": \"1:30\",\n            \"manufacturer\": \"Microsoft Corporation\",\n            \"productName\": \"Virtual Machine\",\n            \"version\": \"Hyper-V UEFI Release v4.1\",\n            \"serialNumber\": \"0000-0007-8866-2232-1954-8664-88\",\n            \"machineType\": \"VM\",\n            \"systemDetails\": null,\n            \"availableRAM\": \"256G\",\n            \"usageRAM\": \"32%\",\n            \"operatingSystem\": \"Ubuntu 20.04.4 LTS\",\n            \"osVersion\": \"20.04.4 LTS\",\n            \"osFamily\": \"Debian\",\n            \"kernel\": \"5.15.0-1014-azure\",\n            \"architecture\": \"x86_64\",\n            \"processorName\": \"Intel(R) Xeon(R) CPU E5-2673 v4 @ 2.30GHz\",\n            \"activeUser\": \"santoshi\",\n            \"systemMainIP\": \"10.12.0.5\"\n       \n    },\n    \n        \"memory_CPUUsage\": {\n            \"memoryUsage\": \"7.20%\",\n            \"swapUsage\": \"\",\n            \"cpuUsage\": \"0.73%\"\n        \n    },\n    \n        \"diskUsage\": [\n            {\n                \"usage\": \"80%\"\n            },\n            {\n                \"filesystem\": \"/dev/loop0\",\n                \"size\": \"62M\",\n                \"used\": \"62M\",\n                \"avail\": \"0\",\n                \"use\": \"100\",\n                \"mountedOn\": \"/snap/core20/1518\"\n            },\n            {\n                \"filesystem\": \"/dev/loop1\",\n                \"size\": \"68M\",\n                \"used\": \"68M\",\n                \"avail\": \"0\",\n                \"use\": \"100\",\n                \"mountedOn\": \"/snap/lxd/22753\"\n            },\n            {\n                \"filesystem\": \"/dev/loop2\",\n                \"size\": \"47M\",\n                \"used\": \"47M\",\n                \"avail\": \"0\",\n                \"use\": \"100\",\n                \"mountedOn\": \"/snap/snapd/16292\"\n            }\n        ] ,\n    \n        \"wwnDetails\": \"vm-cloud-readiness-assesor is a VM\",\n\t\t\"systemDate\":\"\"\n    }",
+					"raw": " {\n        \"systemInformation\": {\n            \"hostname\": \"vm-cloud-readiness-assesor\",\n            \"uptime\": \"1:30\",\n            \"manufacturer\": \"Microsoft Corporation\",\n            \"productName\": \"Virtual Machine\",\n            \"version\": \"Hyper-V UEFI Release v4.1\",\n            \"serialNumber\": \"0000-0007-8866-2232-1954-8664-88\",\n            \"machineType\": \"VM\",\n            \"systemDetails\": null,\n            \"availableRAM\": \"256G\",\n            \"usageRAM\": \"32%\",\n            \"operatingSystem\": \"Ubuntu 20.04.4 LTS\",\n            \"osVersion\": \"20.04.4 LTS\",\n            \"osFamily\": \"Debian\",\n            \"kernel\": \"5.15.0-1014-azure\",\n            \"architecture\": \"x86_64\",\n            \"processorName\": \"Intel(R) Xeon(R) CPU E5-2673 v4 @ 2.30GHz\",\n            \"activeUser\": \"santoshi\",\n            \"systemMainIP\": \"10.12.0.5\"\n       \n    },\n    \n        \"memory_CPUUsage\": {\n            \"memoryUsage\": \"7.20%\",\n            \"swapUsage\": \"\",\n            \"cpuUsage\": \"0.73%\"\n        \n    },\n    \n        \"diskUsage\": [\n            {\n                \"usage\": \"80%\"\n            },\n            {\n                \"filesystem\": \"/dev/loop0\",\n                \"size\": \"62M\",\n                \"used\": \"62M\",\n                \"avail\": \"0\",\n                \"use\": \"100\",\n                \"mountedOn\": \"/snap/core20/1518\"\n            },\n            {\n                \"filesystem\": \"/dev/loop1\",\n                \"size\": \"68M\",\n                \"used\": \"68M\",\n                \"avail\": \"0\",\n                \"use\": \"100\",\n                \"mountedOn\": \"/snap/lxd/22753\"\n            },\n            {\n                \"filesystem\": \"/dev/loop2\",\n                \"size\": \"47M\",\n                \"used\": \"47M\",\n                \"avail\": \"0\",\n                \"use\": \"100\",\n                \"mountedOn\": \"/snap/snapd/16292\"\n            }\n        ] ,\n         \n        \"oracleDBInstances\": \"Oracle user does not exist on vm-cloud-readiness-assesor\",\n    \n    \n        \"packageUpdates\": {\n            \"desc\": \"4 updates can be applied immediately.\"          \n        },\n    \n        \"wwnDetails\": \"vm-cloud-readiness-assesor is a VM\",\n\t\t\"systemDate\":\"\"\n    }",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -27,7 +27,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8080/api/v1/vdidetails",
+					"raw": "http://localhost:8080/api/v1/machinedetails",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -36,14 +36,14 @@
 					"path": [
 						"api",
 						"v1",
-						"vdidetails"
+						"machinedetails"
 					]
 				}
 			},
 			"response": []
 		},
 		{
-			"name": "getVDIDetailsbyId",
+			"name": "getMachineDetailsbyId",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
@@ -67,7 +67,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8080/api/v1/vdidetails/2",
+					"raw": "http://localhost:8080/api/v1/machinedetails/1",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -76,15 +76,15 @@
 					"path": [
 						"api",
 						"v1",
-						"vdidetails",
-						"2"
+						"machinedetails",
+						"1"
 					]
 				}
 			},
 			"response": []
 		},
 		{
-			"name": "getAllVDIDetails",
+			"name": "getAllMachineDetails",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
@@ -108,7 +108,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8080/api/v1/vdidetails",
+					"raw": "http://localhost:8080/api/v1/machinedetails",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -117,14 +117,14 @@
 					"path": [
 						"api",
 						"v1",
-						"vdidetails"
+						"machinedetails"
 					]
 				}
 			},
 			"response": []
 		},
 		{
-			"name": "PostBatchVdiDetails",
+			"name": "PostBatchMachineDetails",
 			"request": {
 				"method": "POST",
 				"header": [
@@ -137,7 +137,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "[\r\n    {\r\n      \r\n        \"systemInformation\": {\r\n            \"hostname\": \"vm-cloud-readiness-assesor\",\r\n            \"uptime\": \"1:30\",\r\n            \"manufacturer\": \"Microsoft Corporation\",\r\n            \"productName\": \"Virtual Machine\",\r\n            \"version\": \"Hyper-V UEFI Release v4.1\",\r\n            \"serialNumber\": \"0000-0007-8866-2232-1954-8664-88\",\r\n            \"machineType\": \"VM\",\r\n            \"systemDetails\": null,\r\n            \"availableRAM\": \"256G\",\r\n            \"usageRAM\": \"32%\",\r\n            \"operatingSystem\": \"Ubuntu 20.04.4 LTS\",\r\n            \"osVersion\": \"20.04.4 LTS\",\r\n            \"osFamily\": \"Debian\",\r\n            \"kernel\": \"5.15.0-1014-azure\",\r\n            \"architecture\": \"x86_64\",\r\n            \"processorName\": \"Intel(R) Xeon(R) CPU E5-2673 v4 @ 2.30GHz\",\r\n            \"activeUser\": \"santoshi\",\r\n            \"systemMainIP\": \"10.12.0.5\"\r\n        },\r\n        \"memory_CPUUsage\": {\r\n            \"memoryUsage\": \"7.20%\",\r\n            \"swapUsage\": \"\",\r\n            \"cpuUsage\": \"0.73%\"\r\n        },\r\n        \"diskUsage\": [\r\n            {\r\n                \"usage\": \"80%\",\r\n                \"filesystem\": null,\r\n                \"size\": null,\r\n                \"used\": null,\r\n                \"avail\": null,\r\n                \"use\": null,\r\n                \"mountedOn\": null\r\n            },\r\n            {\r\n                \"usage\": null,\r\n                \"filesystem\": \"/dev/loop0\",\r\n                \"size\": \"62M\",\r\n                \"used\": \"62M\",\r\n                \"avail\": \"0\",\r\n                \"use\": \"100\",\r\n                \"mountedOn\": \"/snap/core20/1518\"\r\n            },\r\n            {\r\n                \"usage\": null,\r\n                \"filesystem\": \"/dev/loop1\",\r\n                \"size\": \"68M\",\r\n                \"used\": \"68M\",\r\n                \"avail\": \"0\",\r\n                \"use\": \"100\",\r\n                \"mountedOn\": \"/snap/lxd/22753\"\r\n            },\r\n            {\r\n                \"usage\": null,\r\n                \"filesystem\": \"/dev/loop2\",\r\n                \"size\": \"47M\",\r\n                \"used\": \"47M\",\r\n                \"avail\": \"0\",\r\n                \"use\": \"100\",\r\n                \"mountedOn\": \"/snap/snapd/16292\"\r\n            }\r\n        ],\r\n        \"wwnDetails\": \"vm-cloud-readiness-assesor is a VM\",\r\n        \"systemDate\": \"\"\r\n    },\r\n    {\r\n        \"systemInformation\": {\r\n            \"hostname\": \"vm-cloud-readiness-assesor\",\r\n            \"uptime\": \"1:30\",\r\n            \"manufacturer\": \"Microsoft Corporation\",\r\n            \"productName\": \"Virtual Machine\",\r\n            \"version\": \"Hyper-V UEFI Release v4.1\",\r\n            \"serialNumber\": \"0000-0007-8866-2232-1954-8664-88\",\r\n            \"machineType\": \"VM\",\r\n            \"systemDetails\": null,\r\n            \"availableRAM\": \"256G\",\r\n            \"usageRAM\": \"32%\",\r\n            \"operatingSystem\": \"Ubuntu 20.04.4 LTS\",\r\n            \"osVersion\": \"20.04.4 LTS\",\r\n            \"osFamily\": \"Debian\",\r\n            \"kernel\": \"5.15.0-1014-azure\",\r\n            \"architecture\": \"x86_64\",\r\n            \"processorName\": \"Intel(R) Xeon(R) CPU E5-2673 v4 @ 2.30GHz\",\r\n            \"activeUser\": \"santoshi\",\r\n            \"systemMainIP\": \"10.12.0.5\"\r\n        },\r\n        \"memory_CPUUsage\": {\r\n            \"memoryUsage\": \"7.20%\",\r\n            \"swapUsage\": \"\",\r\n            \"cpuUsage\": \"0.73%\"\r\n        },\r\n        \"diskUsage\": [\r\n            {\r\n                \"usage\": \"80%\",\r\n                \"filesystem\": null,\r\n                \"size\": null,\r\n                \"used\": null,\r\n                \"avail\": null,\r\n                \"use\": null,\r\n                \"mountedOn\": null\r\n            },\r\n            {\r\n                \"usage\": null,\r\n                \"filesystem\": \"/dev/loop0\",\r\n                \"size\": \"62M\",\r\n                \"used\": \"62M\",\r\n                \"avail\": \"0\",\r\n                \"use\": \"100\",\r\n                \"mountedOn\": \"/snap/core20/1518\"\r\n            },\r\n            {\r\n                \"usage\": null,\r\n                \"filesystem\": \"/dev/loop1\",\r\n                \"size\": \"68M\",\r\n                \"used\": \"68M\",\r\n                \"avail\": \"0\",\r\n                \"use\": \"100\",\r\n                \"mountedOn\": \"/snap/lxd/22753\"\r\n            },\r\n            {\r\n                \"usage\": null,\r\n                \"filesystem\": \"/dev/loop2\",\r\n                \"size\": \"47M\",\r\n                \"used\": \"47M\",\r\n                \"avail\": \"0\",\r\n                \"use\": \"100\",\r\n                \"mountedOn\": \"/snap/snapd/16292\"\r\n            }\r\n        ],\r\n        \"wwnDetails\": \"vm-cloud-readiness-assesor is a VM\",\r\n        \"systemDate\": \"\"\r\n    },\r\n    {\r\n       \"systemInformation\": {\r\n            \"hostname\": \"vm-cloud-readiness-assesor\",\r\n            \"uptime\": \"1:30\",\r\n            \"manufacturer\": \"Microsoft Corporation\",\r\n            \"productName\": \"Virtual Machine\",\r\n            \"version\": \"Hyper-V UEFI Release v4.1\",\r\n            \"serialNumber\": \"0000-0007-8866-2232-1954-8664-88\",\r\n            \"machineType\": \"VM\",\r\n            \"systemDetails\": null,\r\n            \"availableRAM\": \"256G\",\r\n            \"usageRAM\": \"32%\",\r\n            \"operatingSystem\": \"Ubuntu 20.04.4 LTS\",\r\n            \"osVersion\": \"20.04.4 LTS\",\r\n            \"osFamily\": \"Debian\",\r\n            \"kernel\": \"5.15.0-1014-azure\",\r\n            \"architecture\": \"x86_64\",\r\n            \"processorName\": \"Intel(R) Xeon(R) CPU E5-2673 v4 @ 2.30GHz\",\r\n            \"activeUser\": \"santoshi\",\r\n            \"systemMainIP\": \"10.12.0.5\"\r\n        },\r\n        \"memory_CPUUsage\": {\r\n            \"memoryUsage\": \"7.20%\",\r\n            \"swapUsage\": \"\",\r\n            \"cpuUsage\": \"0.73%\"\r\n        },\r\n        \"diskUsage\": [\r\n            {\r\n                \"usage\": \"80%\",\r\n                \"filesystem\": null,\r\n                \"size\": null,\r\n                \"used\": null,\r\n                \"avail\": null,\r\n                \"use\": null,\r\n                \"mountedOn\": null\r\n            },\r\n            {\r\n                \"usage\": null,\r\n                \"filesystem\": \"/dev/loop0\",\r\n                \"size\": \"62M\",\r\n                \"used\": \"62M\",\r\n                \"avail\": \"0\",\r\n                \"use\": \"100\",\r\n                \"mountedOn\": \"/snap/core20/1518\"\r\n            },\r\n            {\r\n                \"usage\": null,\r\n                \"filesystem\": \"/dev/loop1\",\r\n                \"size\": \"68M\",\r\n                \"used\": \"68M\",\r\n                \"avail\": \"0\",\r\n                \"use\": \"100\",\r\n                \"mountedOn\": \"/snap/lxd/22753\"\r\n            },\r\n            {\r\n                \"usage\": null,\r\n                \"filesystem\": \"/dev/loop2\",\r\n                \"size\": \"47M\",\r\n                \"used\": \"47M\",\r\n                \"avail\": \"0\",\r\n                \"use\": \"100\",\r\n                \"mountedOn\": \"/snap/snapd/16292\"\r\n            }\r\n        ],\r\n        \"wwnDetails\": \"vm-cloud-readiness-assesor is a VM\",\r\n        \"systemDate\": \"\"\r\n    }\r\n]",
+					"raw": "[ {\r\n        \"systemInformation\": {\r\n            \"hostname\": \"vm-cloud-readiness-assesor\",\r\n            \"uptime\": \"1:30\",\r\n            \"manufacturer\": \"Microsoft Corporation\",\r\n            \"productName\": \"Virtual Machine\",\r\n            \"version\": \"Hyper-V UEFI Release v4.1\",\r\n            \"serialNumber\": \"0000-0007-8866-2232-1954-8664-88\",\r\n            \"machineType\": \"VM\",\r\n            \"systemDetails\": null,\r\n            \"availableRAM\": \"256G\",\r\n            \"usageRAM\": \"32%\",\r\n            \"operatingSystem\": \"Ubuntu 20.04.4 LTS\",\r\n            \"osVersion\": \"20.04.4 LTS\",\r\n            \"osFamily\": \"Debian\",\r\n            \"kernel\": \"5.15.0-1014-azure\",\r\n            \"architecture\": \"x86_64\",\r\n            \"processorName\": \"Intel(R) Xeon(R) CPU E5-2673 v4 @ 2.30GHz\",\r\n            \"activeUser\": \"santoshi\",\r\n            \"systemMainIP\": \"10.12.0.5\"\r\n       \r\n    },\r\n    \r\n        \"memory_CPUUsage\": {\r\n            \"memoryUsage\": \"7.20%\",\r\n            \"swapUsage\": \"\",\r\n            \"cpuUsage\": \"0.73%\"\r\n        \r\n    },\r\n    \r\n        \"diskUsage\": [\r\n            {\r\n                \"usage\": \"80%\"\r\n            },\r\n            {\r\n                \"filesystem\": \"/dev/loop0\",\r\n                \"size\": \"62M\",\r\n                \"used\": \"62M\",\r\n                \"avail\": \"0\",\r\n                \"use\": \"100\",\r\n                \"mountedOn\": \"/snap/core20/1518\"\r\n            },\r\n            {\r\n                \"filesystem\": \"/dev/loop1\",\r\n                \"size\": \"68M\",\r\n                \"used\": \"68M\",\r\n                \"avail\": \"0\",\r\n                \"use\": \"100\",\r\n                \"mountedOn\": \"/snap/lxd/22753\"\r\n            },\r\n            {\r\n                \"filesystem\": \"/dev/loop2\",\r\n                \"size\": \"47M\",\r\n                \"used\": \"47M\",\r\n                \"avail\": \"0\",\r\n                \"use\": \"100\",\r\n                \"mountedOn\": \"/snap/snapd/16292\"\r\n            }\r\n        ] ,\r\n         \r\n        \"oracleDBInstances\": \"Oracle user does not exist on vm-cloud-readiness-assesor\",\r\n    \r\n    \r\n        \"packageUpdates\": {\r\n            \"desc\": \"4 updates can be applied immediately.\"          \r\n        },\r\n    \r\n        \"wwnDetails\": \"vm-cloud-readiness-assesor is a VM\",\r\n\t\t\"systemDate\":\"\"\r\n    }\r\n\t,\r\n\t{\r\n        \"systemInformation\": {\r\n            \"hostname\": \"vm-cloud-readiness-assesor\",\r\n            \"uptime\": \"1:30\",\r\n            \"manufacturer\": \"Microsoft Corporation\",\r\n            \"productName\": \"Virtual Machine\",\r\n            \"version\": \"Hyper-V UEFI Release v4.1\",\r\n            \"serialNumber\": \"0000-0007-8866-2232-1954-8664-88\",\r\n            \"machineType\": \"VM\",\r\n            \"systemDetails\": null,\r\n            \"availableRAM\": \"256G\",\r\n            \"usageRAM\": \"32%\",\r\n            \"operatingSystem\": \"Ubuntu 20.04.4 LTS\",\r\n            \"osVersion\": \"20.04.4 LTS\",\r\n            \"osFamily\": \"Debian\",\r\n            \"kernel\": \"5.15.0-1014-azure\",\r\n            \"architecture\": \"x86_64\",\r\n            \"processorName\": \"Intel(R) Xeon(R) CPU E5-2673 v4 @ 2.30GHz\",\r\n            \"activeUser\": \"santoshi\",\r\n            \"systemMainIP\": \"10.12.0.5\"\r\n       \r\n    },\r\n    \r\n        \"memory_CPUUsage\": {\r\n            \"memoryUsage\": \"7.20%\",\r\n            \"swapUsage\": \"\",\r\n            \"cpuUsage\": \"0.73%\"\r\n        \r\n    },\r\n    \r\n        \"diskUsage\": [\r\n            {\r\n                \"usage\": \"80%\"\r\n            },\r\n            {\r\n                \"filesystem\": \"/dev/loop0\",\r\n                \"size\": \"62M\",\r\n                \"used\": \"62M\",\r\n                \"avail\": \"0\",\r\n                \"use\": \"100\",\r\n                \"mountedOn\": \"/snap/core20/1518\"\r\n            },\r\n            {\r\n                \"filesystem\": \"/dev/loop1\",\r\n                \"size\": \"68M\",\r\n                \"used\": \"68M\",\r\n                \"avail\": \"0\",\r\n                \"use\": \"100\",\r\n                \"mountedOn\": \"/snap/lxd/22753\"\r\n            },\r\n            {\r\n                \"filesystem\": \"/dev/loop2\",\r\n                \"size\": \"47M\",\r\n                \"used\": \"47M\",\r\n                \"avail\": \"0\",\r\n                \"use\": \"100\",\r\n                \"mountedOn\": \"/snap/snapd/16292\"\r\n            }\r\n        ] ,\r\n         \r\n        \"oracleDBInstances\": \"Oracle user does not exist on vm-cloud-readiness-assesor\",\r\n    \r\n    \r\n        \"packageUpdates\": {\r\n            \"desc\": \"4 updates can be applied immediately.\"          \r\n        },\r\n    \r\n        \"wwnDetails\": \"vm-cloud-readiness-assesor is a VM\",\r\n\t\t\"systemDate\":\"\"\r\n    }\r\n\t]",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -145,7 +145,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8080/api/v1/batchvdidetails",
+					"raw": "http://localhost:8080/api/v1/batchmachinedetails",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -154,7 +154,7 @@
 					"path": [
 						"api",
 						"v1",
-						"batchvdidetails"
+						"batchmachinedetails"
 					]
 				}
 			},

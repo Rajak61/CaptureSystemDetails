@@ -1,4 +1,4 @@
-package com.wellsfargo.wimt.vdi.model;
+package com.wellsfargo.wimt.machine.model;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;

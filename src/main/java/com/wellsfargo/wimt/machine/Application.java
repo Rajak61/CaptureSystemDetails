@@ -1,4 +1,4 @@
-package com.wellsfargo.wimt.vdi;
+package com.wellsfargo.wimt.machine;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

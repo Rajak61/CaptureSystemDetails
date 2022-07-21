@@ -1,4 +1,4 @@
-package com.wellsfargo.wimt.vdi.exception;
+package com.wellsfargo.wimt.machine.exception;
 
 import java.util.Date;
 
