@@ -19,7 +19,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.wellsfargo.wimt.machine.exception.ResourceNotFoundException;
 import com.wellsfargo.wimt.machine.model.MachineDetails;
-import com.wellsfargo.wimt.machine.repository.MachineRepository;
+import com.wellsfargo.wimt.machine.repository.MachineDetailsRepository;
+import com.wellsfargo.wimt.machine.service.MachineDetailsService;
 import com.wellsfargo.wimt.machine.service.SequenceGeneratorService;
 
 @RestController
@@ -27,10 +28,13 @@ import com.wellsfargo.wimt.machine.service.SequenceGeneratorService;
 public class MachineDetailsController {
 
 	@Autowired
-	private MachineRepository machineRepository;
+	private MachineDetailsRepository machineRepository;
 
 	@Autowired
 	private SequenceGeneratorService sequenceGeneratorService;
+
+	@Autowired
+	MachineDetailsService machineDetailsService;
 
 	Logger logger = LoggerFactory.getLogger(MachineDetailsController.class);
 
@@ -90,4 +94,23 @@ public class MachineDetailsController {
 		logger.info("Exiting the updateMachineDetails #######");
 		return ResponseEntity.ok(updatedMachineDetails);
 	}
+
+	@GetMapping("/machinedetails/getbyos/{osname}")
+	public List<MachineDetails> getMachineDetailsByOSName(@PathVariable(value = "osname") String osName) {
+		logger.info("Entering the getMachineDetailsByOsName #### ");
+		List<MachineDetails> machineDetails=null;
+		if(osName!=null && !osName.isEmpty()){
+		machineDetails = machineDetailsService.getMachineDetailsByOSName(osName);
+		logger.info("Exiting the getMachineDetailsByOsName #### " + machineDetails.size());
+		}
+		return machineDetails;
+	}
+	
+	/*@GetMapping("/machinedetails/csv")
+	public List<MachineDetails> getMachineDetailsCsv() {
+		logger.info("Entering the getMachineDetailsCsv #### ");
+		List<MachineDetails> machineDetails = machineDetailsService.getMachineDetailsCsv();
+		logger.info("Exiting the getMachineDetailsCsv #### " + machineDetails.size());
+		return machineDetails;
+	}*/
 }
