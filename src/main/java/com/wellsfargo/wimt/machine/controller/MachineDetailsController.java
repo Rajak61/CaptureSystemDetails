@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.wellsfargo.wimt.machine.exception.ResourceNotFoundException;
@@ -95,22 +96,37 @@ public class MachineDetailsController {
 		return ResponseEntity.ok(updatedMachineDetails);
 	}
 
-	@GetMapping("/machinedetails/getbyos/{osname}")
-	public List<MachineDetails> getMachineDetailsByOSName(@PathVariable(value = "osname") String osName) {
+	@GetMapping("/machinedetails/getbyos")
+	public List<MachineDetails> getMachineDetailsByOSName(@RequestParam(value = "osName") String osName) {
 		logger.info("Entering the getMachineDetailsByOsName #### ");
 		List<MachineDetails> machineDetails=null;
 		if(osName!=null && !osName.isEmpty()){
-		machineDetails = machineDetailsService.getMachineDetailsByOSName(osName);
+		machineDetails = machineDetailsService.getMachineDetailsByOSName(osName.trim());
 		logger.info("Exiting the getMachineDetailsByOsName #### " + machineDetails.size());
 		}
 		return machineDetails;
 	}
 	
-	/*@GetMapping("/machinedetails/csv")
-	public List<MachineDetails> getMachineDetailsCsv() {
-		logger.info("Entering the getMachineDetailsCsv #### ");
-		List<MachineDetails> machineDetails = machineDetailsService.getMachineDetailsCsv();
-		logger.info("Exiting the getMachineDetailsCsv #### " + machineDetails.size());
+	@GetMapping("/machinedetails/proceesorname")
+	public List<MachineDetails> getMachineDetailsByProcessorName(@RequestParam(value = "processorName") String processorName) {
+		logger.info("Entering the getMachineDetailsByProcessorName #### ");
+		List<MachineDetails> machineDetails=null;
+		if(processorName!=null && !processorName.isEmpty()){
+		machineDetails = machineDetailsService.getMachineDetailsByProcessorName(processorName.trim());
+		logger.info("Exiting the getMachineDetailsByProcessorName #### " + machineDetails.size());
+		}
 		return machineDetails;
-	}*/
+	}
+
+	@GetMapping("/machinedetails/memory")
+	public List<MachineDetails> getMachineDetailsByMemoryUsage(@RequestParam(value = "memoryUsage") String memoryUsage) {
+		logger.info("Entering the getMachineDetailsByMemoryUsage #### ");
+		List<MachineDetails> machineDetails=null;
+		if(memoryUsage!=null && !memoryUsage.isEmpty()){
+		machineDetails = machineDetailsService.getMachineDetailsByMemoryUsage(memoryUsage.trim());
+		logger.info("Exiting the getMachineDetailsByMemoryUsage #### " + machineDetails.size());
+		}
+		return machineDetails;
+	}
+
 }
