@@ -124,6 +124,46 @@
 			"response": []
 		},
 		{
+			"name": "checkhealth",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/checkhealth",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"checkhealth"
+					]
+				}
+			},
+			"response": []
+		},
+		{
 			"name": "getAllMachineDetailsByOSName",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true

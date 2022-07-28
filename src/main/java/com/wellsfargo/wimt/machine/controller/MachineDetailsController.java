@@ -39,6 +39,11 @@ public class MachineDetailsController {
 
 	Logger logger = LoggerFactory.getLogger(MachineDetailsController.class);
 
+	@GetMapping("/checkhealth")
+	public String getHealthCheck() {
+		return "success";
+	}
+
 	@GetMapping("/machinedetails")
 	public List<MachineDetails> getAllMachineDetails() {
 		logger.info("Entering the getAllMachineDetails #######");
